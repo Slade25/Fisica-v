@@ -1,15 +1,14 @@
 document.getElementById('distanceForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    console.log("Formulario enviado");
 
-    // Obtener las oficinas de origen y destino
-    const origin = document.getElementById('origin').value;
-    const destination = document.getElementById('destination').value;
+    const origin = parseInt(document.getElementById('origin').value);
+    const destination = parseInt(document.getElementById('destination').value);
+    console.log("Origen:", origin, "Destino:", destination);
 
-    // Calcular la distancia y el tiempo
     const distance = calculateDistance(origin, destination);
     const time = calculateTime(distance);
 
-    // Mostrar el resultado
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `Distancia: ${distance.toFixed(2)} metros<br>Tiempo estimado: ${time.toFixed(2)} segundos`;
 });
@@ -25,12 +24,11 @@ function calculateDistance(origin, destination) {
     // Calcular la distancia entre los pisos
     let totalDistance = Math.abs(destinationFloor - originFloor) * distancePerFloor;
 
-    // Calcular la distancia adicional si se usa el ascensor
-    if (origin % 10 === 4 || destination % 10 === 4) {
+    // Calcular la distancia adicional si se usa el ascensor o las escaleras
+    if (originFloor !== destinationFloor) {
         totalDistance += elevatorDistance;
     } else {
-        // Si no, calcular la distancia por escalera
-        totalDistance += Math.abs(destinationFloor - originFloor) * stairDistance;
+        totalDistance += Math.abs(destination - origin) * stairDistance;
     }
 
     return totalDistance;
@@ -53,10 +51,9 @@ function calculateTime(distance) {
     }
 
     // Agregar tiempo adicional si se usa el ascensor
-    if (distance % 10 === 4) {
+    if (distance % 100 !== 0) {
         time += elevatorTime;
     }
 
     return time;
 }
-
