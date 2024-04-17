@@ -1,44 +1,94 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular distancia de Salon a Salon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Calcular distancia de Salon a Salon</h2>
+        <form id="distanceForm">
+            <label for="origin">Salon de inicio:</label>
+            <select id="origin" name="origin">
+                <optgroup label="Piso 1">
+                    <option value="101">101</option>
+                    <option value="102">102</option>
+                </optgroup>
+                <optgroup label="Piso 2">
+                    <option value="201">201</option>
+                    <option value="202">202</option>
+                    <option value="203">203</option>
+                    <option value="204">204</option>
+                </optgroup>
+                <optgroup label="Piso 3">
+                    <option value="301">301</option>
+                    <option value="302">302</option>
+                    <option value="303">303</option>
+                    <option value="304">304</option>
+                </optgroup>
+                <optgroup label="Piso 4">
+                    <option value="401">401</option>
+                    <option value="402">402</option>
+                    <option value="403">403</option>
+                    <option value="404">404</option>
+                </optgroup>
+                <optgroup label="Piso 5">
+                    <option value="501">501</option>
+                    <option value="502">502</option>
+                    <option value="503">503</option>
+                    <option value="504">504</option>
+                </optgroup>
+                <optgroup label="Piso 6">
+                    <option value="601">601</option>
+                    <option value="602">602</option>
+                    <option value="603">603</option>
+                    <option value="604">604</option>
+                </optgroup>
+            </select><br>
+            <label for="destination">Salon final:</label>
+            <select id="destination" name="destination">
+                <optgroup label="Piso 1">
+                    <option value="101">101</option>
+                    <option value="102">102</option>
+                </optgroup>
+                <optgroup label="Piso 2">
+                    <option value="201">201</option>
+                    <option value="202">202</option>
+                    <option value="203">203</option>
+                    <option value="204">204</option>
+                </optgroup>
+                <optgroup label="Piso 3">
+                    <option value="301">301</option>
+                    <option value="302">302</option>
+                    <option value="303">303</option>
+                    <option value="304">304</option>
+                </optgroup>
+                <optgroup label="Piso 4">
+                    <option value="401">401</option>
+                    <option value="402">402</option>
+                    <option value="403">403</option>
+                    <option value="404">404</option>
+                </optgroup>
+                <optgroup label="Piso 5">
+                    <option value="501">501</option>
+                    <option value="502">502</option>
+                    <option value="503">503</option>
+                    <option value="504">504</option>
+                </optgroup>
+                <optgroup label="Piso 6">
+                    <option value="601">601</option>
+                    <option value="602">602</option>
+                    <option value="603">603</option>
+                    <option value="604">604</option>
+                </optgroup>
+            </select><br>
+            <input type="submit" value="Calcular">
+        </form>
+        <div id="result"></div>
+    </div>
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="submit"] {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-#result {
-    font-size: 18px;
-}
+    <script src="script.js"></script>
+</body>
+</html>
